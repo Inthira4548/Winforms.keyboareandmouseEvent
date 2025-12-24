@@ -16,7 +16,7 @@ namespace Winforms.keyboareandmouseEvent
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            // lblResult.Text = "�س������: " + e.KeyCode.ToString();
+            // lblResult.Text = "คุณกดปุ่ม: " + e.KeyCode.ToString();
             // if (e.KeyCode == Keys.Escape)
             //{
             //Application.Exit();
@@ -63,17 +63,17 @@ namespace Winforms.keyboareandmouseEvent
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // �ŧ�繵�Ǿ�����˭�
+            // แปลงเป็นตัวพิมพ์ใหญ่
             e.KeyChar = char.ToUpper(e.KeyChar);
 
-            // �ӡѴ�����������Թ 30 ����ѡ��
+            // จำกัดความยาวไม่เกิน 30 ตัวอักษร
             if (txtCode.Text.Length >= 30 && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
                 return;
             }
 
-            // ͹حҵ੾�е���ѡ�� ��л��� Control (�� Backspace)
+            // อนุญาตเฉพาะตัวอักษร และปุ่ม Control (เช่น Backspace)
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
